@@ -9,22 +9,51 @@
 
 <body>
   <h1>Ejercicios de Programación en JavaScript</h1>
+  <label>Inserta palabra aqui:</label>
+  <input
+    type="text"
+  />
   <script>
     /* 1) Programa una función que cuente el número de caracteres de una cadena de texto, pe. miFunción("Hola Mundo") devolverá 10 */
-
+          const NumCaracteres = (Palabra) => {
+           if(typeof Palabra == 'string'){
+             return Palabra.length
+           } else{
+             console.log('Tipo de dato no permitido')
+           }
+          }
+          console.log(NumCaracteres('Hola Mundo'),'Funcion contar caracteres');
 
     /* 2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe. miFunción("Hola Mundo", 4) devolverá "Hola" */
-
-
+          const RecortCaracteres = (Palabra,num) => {
+            if(typeof Palabra == 'string'){
+             return Palabra.slice(0,num)
+           } else{
+             console.log('Tipo de dato no permitido')
+           }
+          }
+          console.log(RecortCaracteres('Hola mundo',3),"Funcion para recortar caracteres");
 
     /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
      miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
-
-
+          const TexttoArray = (Palabra) => {
+            if(typeof Palabra == 'string'){
+             return Palabra.split(' ')
+           } else{
+             console.log('Tipo de dato no permitido')
+           }
+          }
+          console.log(TexttoArray('Hola mundo aqui estoy yo'),"Funcion que devuelve texto en array");
 
     /* 4) Programa una función que repita un texto X veces, pe. miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo */
-
-
+          const RepetirText = (Palabra,num) =>{
+            if(typeof Palabra == 'string'){
+             return Palabra.repeat(num)
+           } else{
+             console.log('Tipo de dato no permitido')
+           }
+          }
+          console.log(RepetirText('Hola mundo ',2),'Funcion que repite el texto X numero de veces')
 
     /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH" */
 
