@@ -56,7 +56,14 @@
           console.log(RepetirText('Hola mundo ',2),'Funcion que repite el texto X numero de veces')
 
     /* 5) Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH" */
-
+          const InvertirLetras = (texto) =>{
+            if(typeof Palabra == 'string'){
+            return texto.split("").reverse().join("");
+            }else{
+              console.log('Tipo de dato no permitido')
+            }
+          }
+          console.log(InvertirLetras('Hola mundo'),'Funcion que invierte las cadenas de texto')
 
 
     /* 6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2 */
