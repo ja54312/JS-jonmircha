@@ -40,7 +40,7 @@
       );
 
       /* 3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe.
-     miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
+      miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'] */
       const TexttoArray = (Palabra) => {
         if (typeof Palabra == "string") {
           return Palabra.split(" ");
@@ -127,11 +127,44 @@
           : console.info("08", texto.replace(new RegExp(patron, "ig"), ""));
       eliminarCaracteres("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
       /* 9) Programa una función que obtenga un numero aleatorio entre 501 y 600 */
-
+      const aleatorio = () =>
+        console.info("09", Math.round(Math.random() * 100 + 500));
+      aleatorio();
       /* 10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true  */
+      const capicua = (numero = 0) => {
+        if (!numero) return console.warn("no ingresaste un numero");
+        if (typeof numero !== "number")
+          return console.error(`El valor ${numero} ingresado ,NO es un número`);
 
+        numero = numero.toString();
+        let alReves = numero.split("").reverse().join("");
+        return numero === alReves
+          ? console.info(
+              "10",
+              `Si es capícua ,Numero original ${numero},Numero al reves ${alReves}`
+            )
+          : console.info(
+              "10",
+              `No es capícua ,Numero original ${numero},Numero al reves ${alReves}`
+            );
+      };
+      capicua(2002);
       /* 11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120 */
-
+      const factorial = (numero = undefined) => {
+        if (numero === undefined)
+          return console.warn("no ingresaste un numero");
+        if (typeof numero !== "number")
+          return console.error(`El valor ${numero} ingresado ,NO es un número`);
+        if (numero === 0) return console.error("El número no puede ser 0");
+        if (Math.sign(numero) === -1)
+          return console.error("El número no puede ser negativo");
+        let factorial = 1;
+        for (let i = numero; i > 1; i--) {
+          factorial *= i;
+        }
+        return console.info("11", `El factorial ${numero}! es ${factorial}`);
+      };
+      factorial(5);
       /* 12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true */
 
       /* 13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar */
@@ -163,22 +196,22 @@
       /* 26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5 */
 
       /* 27) Programa una clase llamada Pelicula.
-        La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
-          - Todos los datos del objeto son obligatorios.
-          - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes números.
-          - Valida que el título no rebase los 100 caracteres.
-          - Valida que el director no rebase los 50 caracteres.
-          - Valida que el año de estreno sea un número entero de 4 dígitos.
-          - Valida que el país o paises sea introducidos en forma de arreglo.
-          - Valida que los géneros sean introducidos en forma de arreglo.
-          - Valida que los géneros introducidos esten dentro de los géneros aceptados*.
-          - Crea un método estático que devuelva los géneros aceptados*.
-          - Valida que la calificación sea un número entre 0 y 10 pudiendo ser decimal de una posición.
-          - Crea un método que devuelva toda la ficha técnica de la película.
-          - Apartir de un arreglo con la información de 3 películas genera 3 instancias de la clase de forma automatizada e imprime la ficha técnica de cada película.
+         La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+           - Todos los datos del objeto son obligatorios.
+           - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los 7 restantes números.
+           - Valida que el título no rebase los 100 caracteres.
+           - Valida que el director no rebase los 50 caracteres.
+           - Valida que el año de estreno sea un número entero de 4 dígitos.
+           - Valida que el país o paises sea introducidos en forma de arreglo.
+           - Valida que los géneros sean introducidos en forma de arreglo.
+           - Valida que los géneros introducidos esten dentro de los géneros aceptados*.
+           - Crea un método estático que devuelva los géneros aceptados*.
+           - Valida que la calificación sea un número entre 0 y 10 pudiendo ser decimal de una posición.
+           - Crea un método que devuelva toda la ficha técnica de la película.
+           - Apartir de un arreglo con la información de 3 películas genera 3 instancias de la clase de forma automatizada e imprime la ficha técnica de cada película.
 
-        * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
-        */
+         * Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+         */
     </script>
   </body>
 </html>
