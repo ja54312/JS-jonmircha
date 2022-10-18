@@ -313,11 +313,58 @@
       calcularAnios(new Date(1991, 06, 23));
       calcularAnios(new Date(2084, 06, 23));
       /* 18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5 */
-
+      const contarLetras = (cadena = "") => {
+        if (!cadena) return console.warn("No ingresaste una cadena de texto");
+        if (typeof cadena !== "string")
+          return console.error(
+            `El valor ${cadena} ingresado ,NO es una cadena de texto`
+          );
+        let vocales = 0;
+        let consonantes = 0;
+        for (let letra of cadena) {
+          if (/[aeiouáéíóúAEIOUÁÉÍÓÚ]/.test(letra)) {
+            vocales++;
+          }
+          if (/[BCDFGHJKLMNÑPQRSTVWXYZbcdfghjklmnñpqrstvwxyz]/.test(letra)) {
+            consonantes++;
+          }
+        }
+        return console.info("18", {
+          cadena,
+          vocales,
+          consonantes,
+        });
+      };
+      contarLetras("Hola Mundo");
       /* 19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero */
-
+      const validarNombre = (nombre = "") => {
+        if (!nombre) return console.warn("No ingresaste un nombre");
+        if (typeof nombre !== "string")
+          return console.error(
+            `El valor ${nombre} ingresado,NO es una cadena de texto`
+          );
+        let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(nombre);
+        return expReg
+          ? console.info("19", `${nombre} es valido`)
+          : console.info("19", `${nombre} NO es valido`);
+      };
+      validarNombre("Jose Antonio");
       /* 20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero */
-
+      const validarEmail = (email = "") => {
+        if (!email) return console.warn("No ingresaste un email");
+        if (typeof email !== "string")
+          return console.error(
+            `El valor ${email} ingresado,NO es una cadena de texto`
+          );
+        let expReg =
+          /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(
+            email
+          );
+        return expReg
+          ? console.info("20", `${email} es valido`)
+          : console.info("20", `${email} NO es valido`);
+      };
+      validarEmail("JoseAntonio@gmail.com");
       /* 21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25] */
 
       /* 22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60] */
