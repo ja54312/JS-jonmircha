@@ -1,0 +1,23 @@
+{
+  "name": "js-jonmircha",
+  "version": "1.0.0",
+  "description": "arrays",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ja54312/JS-jonmircha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ja54312/JS-jonmircha/issues"
+  },
+  "homepage": "https://github.com/ja54312/JS-jonmircha#readme",
+  "dependencies": {
+    "http-server": "^0.12.3"
+  }
+}
