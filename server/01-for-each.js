@@ -1,0 +1,7 @@
+const letters = ['a','b','c'];
+
+for(let i = 0;i< letters.length;i++){
+    const element = letters[i]
+    console.log(element,1)
+}
+letters.forEach(item => console.log(item,2))
